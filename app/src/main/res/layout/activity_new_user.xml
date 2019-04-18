@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewUserActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <TextView
+        style="@style/fielTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"/>
+
+    <EditText
+        style="@style/fielTheme"
+        android:id="@+id/nameid"
+        android:hint="Name"
+        android:inputType="textFilter"
+        android:maxLength="30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username:"/>
+
+        <EditText
+            style="@style/fielTheme"
+            android:id="@+id/usernameid"
+            android:hint="Username"
+            android:inputType="textFilter"
+            android:maxLength="30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password:"/>
+
+        <EditText
+            style="@style/fielTheme"
+            android:id="@+id/passwordid"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:maxLength="8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Of Birth:"/>
+
+        <EditText
+            style="@style/fielTheme"
+            android:id="@+id/dobid"
+            android:hint=""
+            android:inputType=""
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sex:"/>
+
+        <EditText
+            style="@style/fielTheme"
+            android:id="@+id/sexid"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Civil ID:"/>
+
+        <EditText
+            style="@style/fielTheme"
+            android:id="@+id/civilid"
+            android:hint="Civil ID"
+            android:inputType="number"
+            android:maxLength="13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number:"/>
+
+        <EditText
+            style="@style/fielTheme"
+            android:id="@+id/mobileid"
+            android:hint="Mobile Number"
+            android:inputType="number"
+            android:maxLength="11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email Id:"/>
+
+        <EditText
+            style="@style/fielTheme"
+            android:id="@+id/emailid"
+            android:hint="Email Id"
+            android:inputType="textEmailAddress"
+            android:maxLength="30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight:"/>
+
+        <EditText
+            style="@style/fielTheme"
+            android:id="@+id/weightid"
+            android:hint="weight"
+            android:inputType="textFilter"
+            android:maxLength="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sugar Level:"/>
+
+        <EditText
+            style="@style/fielTheme"
+            android:id="@+id/sugarlevelid"
+            android:hint="Sugar Level"
+            android:inputType="textFilter"
+            android:maxLength="3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+        <Button
+            android:id="@+id/nextofNewid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"/>
+    </LinearLayout>
+</ScrollView>
