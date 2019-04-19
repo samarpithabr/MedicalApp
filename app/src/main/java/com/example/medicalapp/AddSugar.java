@@ -38,18 +38,28 @@ import android.widget.Toast;
                     return;
                 }
                 if((sugarResult>=4 && sugarResult<=7 )&&(weightresult == 70)) {
-                    Toast.makeText(getApplicationContext(), "type2", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AddSugar.this,SymtomsActivity.class);
+                    intent.putExtra("tct","You Have Type261 Diabeties");
+                    startActivity(intent);
+                    finish();
                 }else if((sugarResult>7 )&&(weightresult >= 70)){
-                    Toast.makeText(getApplicationContext(), "type2", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AddSugar.this,SymtomsActivity.class);
+                    intent.putExtra("tct","You Have Type21 Diabeties");
+                    startActivity(intent);
+                    finish();
                 }else if((sugarResult>=5 && sugarResult<=7 )&&(weightresult >= 50)){
-                    Toast.makeText(getApplicationContext(), "type1", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AddSugar.this,SymtomsActivity.class);
+                    intent.putExtra("tct","You Have Type213 Diabeties");
+                    startActivity(intent);
+                    finish();
                 }else if ((sugarResult>7 )&&(weightresult >=50))
                 {
-                    Toast.makeText(getApplicationContext(), "type1", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AddSugar.this,SymtomsActivity.class);
+                    intent.putExtra("tct","You Have Type215 Diabeties");
+                    startActivity(intent);
+                    finish();
                 }
-                Intent intent = new Intent(AddSugar.this,SymtomsActivity.class);
-                startActivity(intent);
-                finish();
+
             }
         });
 
