@@ -72,15 +72,17 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <TextView
+            <Button
+                android:clickable="true"
+                android:id="@+id/calButton"
                 style="@style/fielTheme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Date Of Birth"/>
-        <DatePicker
-            android:id="@+id/dpResult"
-            android:layout_width="220dp"
-            android:layout_height="220dp" />
+<EditText
+    android:id="@+id/editcal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
         </LinearLayout>
     <RadioGroup
         android:layout_width="match_parent"
@@ -170,47 +172,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            style="@style/fielTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Weight:"/>
 
-        <EditText
-            android:background="@drawable/textinputborder"
-            android:id="@+id/weightid"
-            android:hint="weight"
-            android:inputType="textFilter"
-            android:maxLength="3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            style="@style/fielTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sugar Level:"/>
-
-        <EditText
-            android:background="@drawable/textinputborder"
-            android:id="@+id/sugarlevelid"
-            android:hint="Sugar Level"
-            android:inputType="textFilter"
-            android:maxLength="3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
         <Button
             android:id="@+id/nextofNewid"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Next"/>
     </LinearLayout>

@@ -59,7 +59,7 @@ tct1.setText(getIntent().getExtras().getString("tct"));
 
 
     Intent intent = new Intent(SymtomsActivity.this, Main2Activity.class);
-    intent.putExtra("tct1","tct1.setText(getIntent().getExtras().getString(\"tct\"));");
+    intent.putExtra("tct1","tct1");
     startActivity(intent);
     finish();
 }

@@ -21,6 +21,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 
 public class NewUserActivity extends AppCompatActivity {
@@ -45,8 +48,9 @@ public class NewUserActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private ProgressBar progressDialogue;
     private Button nxtBtn;
-    private RadioButton malesexid;
-    private RadioButton femalesexid;
+ private EditText calenderedit;
+ private Button calendarButton;
+
    // DatePicker simpleDatePicker = (DatePicker)findViewById(R.id.simpleDatePicker);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,30 +63,56 @@ public class NewUserActivity extends AppCompatActivity {
         usernameText = (EditText) findViewById(R.id.usernameid);
         passwrdText = (EditText) findViewById(R.id.passwordid);
        //dobText = (EditText) findViewById(R.id.dobid);
-        dpResult = (DatePicker) findViewById(R.id.dpResult);
+       // dpResult = (DatePicker) findViewById(R.id.dpResult);
 
         civilText = (EditText) findViewById(R.id.civilid);
         mobileText = (EditText) findViewById(R.id.mobileid);
         emailText = (EditText) findViewById(R.id.emailid);
         weightText = (EditText) findViewById(R.id.weightid);
         sugarText = (EditText) findViewById(R.id.sugarlevelid);
+        calendarButton = (Button) findViewById(R.id.calButton);
+        calenderedit = (EditText) findViewById(R.id.editcal);
+        final Calendar myCalendar = Calendar.getInstance();
+
+      //  EditText edittext= (EditText) findViewById(R.id.Birthday);
+        final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                String myFormat = "MMM dd, yyyy"; //In which you need put here
+                SimpleDateFormat sdformat = new SimpleDateFormat(myFormat, Locale.US);
+                myCalendar.set(Calendar.YEAR, year);
+                myCalendar.set(Calendar.MONTH, monthOfYear);
+                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                calenderedit.setText(sdformat.format(myCalendar.getTime()));
+            }
+
+        };
+        calendarButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new DatePickerDialog(NewUserActivity.this, date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+
+            }
+
+        });
+
 nxtBtn = (Button) findViewById(R.id.nextofNewid) ;
+
+
         nxtBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name = nameText.getText().toString().trim();
                 String username = usernameText.getText().toString().trim();
                 final String password = passwrdText.getText().toString().trim();
-//                String dob = dobText.getText().toString().trim();
-                // initiate a date picker
-
-
-                    // Is the button now checked?
-
-
-
-              //  simpleDatePicker.setSpinnersShown(false);
-//                String sex = sexText.getText().toString().trim();
+//
                 String civil = civilText.getText().toString().trim();
                 String mobile = mobileText.getText().toString().trim();
                 String email = emailText.getText().toString().trim();
@@ -175,7 +205,8 @@ finish();
                             break;
                 }
             }
-            private DatePickerDialog.OnDateSetListener datePickerListener
+
+       /*    private DatePickerDialog.OnDateSetListener datePickerListener
                     = new DatePickerDialog.OnDateSetListener() {
 
                 // when dialog box is closed, below method will be called.
@@ -186,15 +217,17 @@ finish();
                     day = selectedDay;
 
                     // set selected date into textview
-                  tvDisplayDate.setText(new StringBuilder().append(month + 1)
-                        .append("-").append(day).append("-").append(year)
-                         .append(" "));
+               //   tvDisplayDate.setText(new StringBuilder().append(month + 1)
+                 //       .append("-").append(day).append("-").append(year)
+                  //       .append(" "));
 
                     // set selected date into datepicker also
                     dpResult.init(year, month, day, null);
 
                 }
-            };
+            };*/
+
+
         });
 
 
