@@ -1,5 +1,7 @@
 package com.example.medicalapp;
 
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +9,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +24,14 @@ import com.google.android.gms.tasks.Task;
 
 
 public class NewUserActivity extends AppCompatActivity {
+    private DatePicker dpResult;
+    private TextView tvDisplayDate;
+    //private DatePicker dpResult;
+    private Button btnChangeDate;
 
+    private int year;
+    private int month;
+    private int day;
     private EditText nameText;
     private EditText usernameText;
     private EditText passwrdText;
@@ -34,7 +45,9 @@ public class NewUserActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     private ProgressBar progressDialogue;
     private Button nxtBtn;
-
+    private RadioButton malesexid;
+    private RadioButton femalesexid;
+   // DatePicker simpleDatePicker = (DatePicker)findViewById(R.id.simpleDatePicker);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,8 +58,9 @@ public class NewUserActivity extends AppCompatActivity {
         nameText = (EditText) findViewById(R.id.nameid);
         usernameText = (EditText) findViewById(R.id.usernameid);
         passwrdText = (EditText) findViewById(R.id.passwordid);
-        dobText = (EditText) findViewById(R.id.dobid);
-        sexText = (EditText) findViewById(R.id.sexid);
+       //dobText = (EditText) findViewById(R.id.dobid);
+        dpResult = (DatePicker) findViewById(R.id.dpResult);
+
         civilText = (EditText) findViewById(R.id.civilid);
         mobileText = (EditText) findViewById(R.id.mobileid);
         emailText = (EditText) findViewById(R.id.emailid);
@@ -59,13 +73,22 @@ nxtBtn = (Button) findViewById(R.id.nextofNewid) ;
                 String name = nameText.getText().toString().trim();
                 String username = usernameText.getText().toString().trim();
                 final String password = passwrdText.getText().toString().trim();
-                String dob = dobText.getText().toString().trim();
-                String sex = sexText.getText().toString().trim();
+//                String dob = dobText.getText().toString().trim();
+                // initiate a date picker
+
+
+                    // Is the button now checked?
+
+
+
+              //  simpleDatePicker.setSpinnersShown(false);
+//                String sex = sexText.getText().toString().trim();
                 String civil = civilText.getText().toString().trim();
                 String mobile = mobileText.getText().toString().trim();
                 String email = emailText.getText().toString().trim();
                 String weight = weightText.getText().toString().trim();
                 String sugar = sugarText.getText().toString().trim();
+
                 if (TextUtils.isEmpty(name)) {
                     Toast.makeText(getApplicationContext(), "Enter name!", Toast.LENGTH_SHORT).show();
                     return;
@@ -76,15 +99,13 @@ nxtBtn = (Button) findViewById(R.id.nextofNewid) ;
                     return;
                 }
 
-                if (TextUtils.isEmpty(dob)) {
+             /*   if (TextUtils.isEmpty(dob)) {
                     Toast.makeText(getApplicationContext(), "Enter dob!", Toast.LENGTH_SHORT).show();
                     return;
-                }
+                }*/
 
-                if (TextUtils.isEmpty(sex)) {
-                    Toast.makeText(getApplicationContext(), "Enter sex!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+
+
 
                 if (TextUtils.isEmpty(civil)) {
                     Toast.makeText(getApplicationContext(), "Enter CivilId!", Toast.LENGTH_SHORT).show();
@@ -131,17 +152,72 @@ nxtBtn = (Button) findViewById(R.id.nextofNewid) ;
 
                                 } else {
 
-                                    startActivity(new Intent(NewUserActivity.this, SymtomsActivity.class));
-finish();finish();
+                                    startActivity(new Intent(NewUserActivity.this, AddSugar.class));
+finish();
                                 }
                             }
                         });
 
             }
+            public void onRadioButtonClicked(View view) {
+                // Is the button now checked?
+                boolean checked = ((RadioButton) view).isChecked();
+
+                // Check which radio button was clicked
+                switch(view.getId()) {
+                    case R.id.maleid:
+                        if (checked)
+                            // Pirates are the best
+                            break;
+                    case R.id.femaleid:
+                        if (checked)
+                            // Ninjas rule
+                            break;
+                }
+            }
+            private DatePickerDialog.OnDateSetListener datePickerListener
+                    = new DatePickerDialog.OnDateSetListener() {
+
+                // when dialog box is closed, below method will be called.
+                public void onDateSet(DatePicker view, int selectedYear,
+                                      int selectedMonth, int selectedDay) {
+                    year = selectedYear;
+                    month = selectedMonth;
+                    day = selectedDay;
+
+                    // set selected date into textview
+                  tvDisplayDate.setText(new StringBuilder().append(month + 1)
+                        .append("-").append(day).append("-").append(year)
+                         .append(" "));
+
+                    // set selected date into datepicker also
+                    dpResult.init(year, month, day, null);
+
+                }
+            };
         });
+
 
 
     }
 }
+/*    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Of Birth:"/>
 
+        <EditText
+
+            android:hint="dob"
+            android:id="@+id/dobid"
+            android:background="@drawable/textinputborder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           />
+    </LinearLayout>*/
 

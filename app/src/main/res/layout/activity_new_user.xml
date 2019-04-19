@@ -22,7 +22,8 @@
         android:text="Name:"/>
 
     <EditText
-        style="@style/fielTheme"
+        android:background="@drawable/textinputborder"
+
         android:id="@+id/nameid"
         android:hint="Name"
         android:inputType="textFilter"
@@ -41,7 +42,7 @@
             android:text="Username:"/>
 
         <EditText
-            style="@style/fielTheme"
+            android:background="@drawable/textinputborder"
             android:id="@+id/usernameid"
             android:hint="Username"
             android:inputType="textFilter"
@@ -60,7 +61,7 @@
             android:text="Password:"/>
 
         <EditText
-            style="@style/fielTheme"
+            android:background="@drawable/textinputborder"
             android:id="@+id/passwordid"
             android:hint="password"
             android:inputType="textPassword"
@@ -68,26 +69,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            style="@style/fielTheme"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date Of Birth:"/>
-
-        <EditText
-            style="@style/fielTheme"
-            android:id="@+id/dobid"
-            android:hint=""
-            android:inputType=""
-
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-    <LinearLayout
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/fielTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date Of Birth"/>
+        <DatePicker
+            android:id="@+id/dpResult"
+            android:layout_width="220dp"
+            android:layout_height="220dp" />
+        </LinearLayout>
+    <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
@@ -96,14 +91,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sex:"/>
-
-        <EditText
-            style="@style/fielTheme"
-            android:id="@+id/sexid"
-
+        <RadioButton
+            android:id="@+id/maleid"
+            android:textColor="#000000"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="Male"
+            />
+    <RadioButton
+        android:id="@+id/femaleid"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Female"/>
+    </RadioGroup>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -115,7 +116,7 @@
             android:text="Civil ID:"/>
 
         <EditText
-            style="@style/fielTheme"
+            android:background="@drawable/textinputborder"
             android:id="@+id/civilid"
             android:hint="Civil ID"
             android:inputType="number"
@@ -132,9 +133,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mobile Number:"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FAFAFA"
+            android:text="+965"
+            style="@style/fielTheme"
+
+            />
 
         <EditText
-            style="@style/fielTheme"
+            android:background="@drawable/textinputborder"
             android:id="@+id/mobileid"
             android:hint="Mobile Number"
             android:inputType="number"
@@ -153,7 +162,7 @@
             android:text="Email Id:"/>
 
         <EditText
-            style="@style/fielTheme"
+            android:background="@drawable/textinputborder"
             android:id="@+id/emailid"
             android:hint="Email Id"
             android:inputType="textEmailAddress"
@@ -172,7 +181,7 @@
             android:text="Weight:"/>
 
         <EditText
-            style="@style/fielTheme"
+            android:background="@drawable/textinputborder"
             android:id="@+id/weightid"
             android:hint="weight"
             android:inputType="textFilter"
@@ -191,7 +200,7 @@
             android:text="Sugar Level:"/>
 
         <EditText
-            style="@style/fielTheme"
+            android:background="@drawable/textinputborder"
             android:id="@+id/sugarlevelid"
             android:hint="Sugar Level"
             android:inputType="textFilter"

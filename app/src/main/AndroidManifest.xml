@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SymtomsActivity"></activity>
+        <activity android:name=".AddSugar" />
+        <activity android:name=".SymtomsActivity" />
         <activity android:name=".NewUserActivity" />
         <activity android:name=".ReturnActivity" />
         <activity android:name=".MainActivity">

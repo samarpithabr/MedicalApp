@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    tools:context=".AddSugar">
+
+
+    <LinearLayout
+
+        android:layout_gravity="center_horizontal"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/fielTheme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter your Weight:" />
+        <EditText
+            android:background="@drawable/textinputborder"
+            android:id="@+id/weightAddid"
+            android:hint="weight"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/fielTheme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter your Sugar Level value:" />
+
+            <EditText
+                android:background="@drawable/textinputborder"
+                android:id="@+id/sugarLevel"
+                android:hint="sugar"
+                android:inputType="number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <Button
+            style="@style/fielTheme"
+            android:layout_gravity="center"
+            android:id="@+id/nextinIaddsw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next" />
+
+    </LinearLayout>
+</LinearLayout>

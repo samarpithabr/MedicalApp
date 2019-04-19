@@ -7,6 +7,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,10 +34,10 @@ public class ReturnActivity extends AppCompatActivity {
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-        if (auth.getCurrentUser() != null) {
+      /*  if (auth.getCurrentUser() != null) {
             startActivity(new Intent(ReturnActivity.this, SymtomsActivity.class));
             finish();
-        }
+        }*/
 
         // set the view now
         setContentView(R.layout.activity_return);
@@ -67,7 +68,8 @@ public class ReturnActivity extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+                //Progress Bar is not in layout!   So it is NULL
+//                progressBar.setVisibility(View.VISIBLE);
 
                 //authenticate user
                 auth.signInWithEmailAndPassword(username, passwrd)
@@ -77,13 +79,19 @@ public class ReturnActivity extends AppCompatActivity {
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
-                                progressBar.setVisibility(View.GONE);
+
+                                //Progress Bar is not in layout!   So it is NULL
+                                //                              progressBar.setVisibility(View.GONE);
                                 if (!task.isSuccessful()) {
                                     // there was an error
-                                    if (passwrd.length() < 6) {
+                                    //Log the error
+                                    Log.e("LOG", task.getException().toString());
+
+                                    if (passwrd.length() < 8) {
                                         paswrdre.setError("enter password");
                                     } else {
-                                        Toast.makeText(ReturnActivity.this, "Authenticatio failed", Toast.LENGTH_LONG).show();
+
+                                        Toast.makeText(ReturnActivity.this, "Please Sign Up", Toast.LENGTH_LONG).show();
                                     }
                                 } else {
                                     Intent intent = new Intent(ReturnActivity.this, SymtomsActivity.class);
@@ -94,6 +102,6 @@ public class ReturnActivity extends AppCompatActivity {
                         });
             }
         });
+
     }
 }
-     
