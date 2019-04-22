@@ -4,14 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:layout_centerHorizontal="true"
-    android:layout_centerVertical="true"
+    android:background="#18FFFF"
     android:orientation="vertical"
     tools:context=".AddSugar">
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userid"
+        android:layout_gravity="right"/>
+<Button
+    android:background="#00ACC1"
+    android:id="@+id/signoutId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Sign Out"
+    android:layout_gravity="right"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
+
+       android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -35,6 +48,7 @@ android:layout_centerHorizontal="true"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textStyle="bold"
+                android:textSize="23sp"
                 android:text="KG"/>
 
         </LinearLayout>
@@ -63,11 +77,13 @@ android:layout_centerHorizontal="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
+                    android:textSize="23sp"
                     android:text="mmol/L"/>
             </LinearLayout>
         </LinearLayout>
 
         <Button
+            android:background="#00ACC1"
             style="@style/fielTheme"
             android:layout_gravity="center"
             android:id="@+id/nextinIaddsw"

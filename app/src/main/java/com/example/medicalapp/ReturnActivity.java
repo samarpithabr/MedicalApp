@@ -21,30 +21,24 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ReturnActivity extends AppCompatActivity {
-    private EditText usernamere;
+    private EditText emailmere;
     private EditText paswrdre;
     private Button nextBtn;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-      /*  if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(ReturnActivity.this, SymtomsActivity.class));
-            finish();
-        }*/
-
         // set the view now
         setContentView(R.layout.activity_return);
 
 
-
-        usernamere = (EditText) findViewById(R.id.userreid);
+        emailmere = (EditText) findViewById(R.id.userreid);
         paswrdre = (EditText) findViewById(R.id.passwrdreid);
         nextBtn = (Button) findViewById(R.id.nextreid);
 
@@ -56,9 +50,9 @@ public class ReturnActivity extends AppCompatActivity {
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = usernamere.getText().toString().trim();
+                String email = emailmere.getText().toString().trim();
                 final String passwrd = paswrdre.getText().toString().trim();
-                if (TextUtils.isEmpty(username)) {
+                if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter name!", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -72,7 +66,7 @@ public class ReturnActivity extends AppCompatActivity {
 //                progressBar.setVisibility(View.VISIBLE);
 
                 //authenticate user
-                auth.signInWithEmailAndPassword(username, passwrd)
+                auth.signInWithEmailAndPassword(email, passwrd)
                         .addOnCompleteListener(ReturnActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -90,13 +84,13 @@ public class ReturnActivity extends AppCompatActivity {
                                     if (passwrd.length() < 8) {
                                         paswrdre.setError("enter password");
                                     } else {
-
                                         Toast.makeText(ReturnActivity.this, "Please Sign Up", Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Intent intent = new Intent(ReturnActivity.this, SymtomsActivity.class);
+                                    Intent intent = new Intent(ReturnActivity.this,AddSugar.class);
+                                    intent.putExtra("tct",emailmere.getText().toString());
                                     startActivity(intent);
-                                    finish();
+
                                 }
                             }
                         });

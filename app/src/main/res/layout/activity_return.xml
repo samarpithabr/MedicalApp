@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#18FFFF"
     tools:context=".ReturnActivity">
     <LinearLayout
         android:layout_width="wrap_content"
@@ -14,16 +15,18 @@
             style="@style/fielTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username"/>
+            android:text="Email:"/>
 
         <EditText
-            style="@style/fielTheme"
+            android:background="@drawable/textinputborder"
             android:id="@+id/userreid"
-            android:inputType="text"
+            android:inputType="textFilter"
             android:maxLength="30"
+            android:hint="Email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,19 +35,23 @@
             style="@style/fielTheme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"/>
+            android:text="Password:"/>
 
         <EditText
-            style="@style/fielTheme"
+            android:background="@drawable/textinputborder"
             android:id="@+id/passwrdreid"
-            android:inputType="textPassword"
-            android:maxLength="8"
+            style="@style/fielTheme"
+            android:hint="password"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="8" />
     </LinearLayout>
+
     <Button
+        android:background="#00ACC1"
         android:id="@+id/nextreid"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Next"/>
 </LinearLayout>

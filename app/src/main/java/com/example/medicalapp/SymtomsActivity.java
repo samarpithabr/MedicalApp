@@ -1,7 +1,6 @@
 package com.example.medicalapp;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,9 +34,9 @@ public class SymtomsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_symtoms);
-        //  signoutSym = (Button) findViewById(R.id.signoutid);
-aaid = (CheckBox) findViewById(R.id.aid);
-bbid = (CheckBox) findViewById(R.id.bid);
+
+        aaid = (CheckBox) findViewById(R.id.aid);
+        bbid = (CheckBox) findViewById(R.id.bid);
         ccid = (CheckBox) findViewById(R.id.cid);
         ddid = (CheckBox) findViewById(R.id.did);
         eeid = (CheckBox) findViewById(R.id.eid);
@@ -52,39 +51,26 @@ bbid = (CheckBox) findViewById(R.id.bid);
 nextfinal=(Button) findViewById(R.id.nextsymid);
 tct1 = (TextView) findViewById(R.id.tctid);
 tct1.setText(getIntent().getExtras().getString("tct"));
+        tct1.setVisibility(View.INVISIBLE);
         nextfinal.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-
+if(aaid.isChecked() || bbid.isChecked() || ccid.isChecked() || ddid.isChecked() || eeid.isChecked() || ffid.isChecked() || ggid.isChecked() || hhid.isChecked() || iiid.isChecked() ||jjid.isChecked() || kkid.isChecked() || llid.isChecked()) {
 
     Intent intent = new Intent(SymtomsActivity.this, Main2Activity.class);
-    intent.putExtra("tct1","tct1");
+    intent.putExtra("tct1", tct1.getText().toString());
     startActivity(intent);
-    finish();
+}
+else {
+    Toast.makeText(getApplicationContext(), "Select Symptoms!", Toast.LENGTH_SHORT).show();
+}
+
 }
 
         });
+
     }
 
-    public void onCheckboxClicked(View view) {
-        // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
-boolean ad =aaid.isChecked();
-boolean bd = bbid.isChecked();
-        boolean cd =ccid.isChecked();
-        boolean dd = ddid.isChecked();
-        boolean ed =eeid.isChecked();
-        boolean fd = ffid.isChecked();
-        boolean gd =ggid.isChecked();
-        boolean hd = hhid.isChecked();
-        boolean id =iiid.isChecked();
-        boolean jd = jjid.isChecked();
-        boolean kd =kkid.isChecked();
-        boolean ld = llid.isChecked();
 
-if(ad || bd){
-    Toast.makeText(getApplicationContext(), "type1", Toast.LENGTH_SHORT).show();
-}
-    }
 }

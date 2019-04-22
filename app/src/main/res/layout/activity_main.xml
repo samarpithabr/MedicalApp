@@ -8,30 +8,39 @@
     android:background="@drawable/smart1"
     tools:context=".MainActivity">
 
+
 <LinearLayout
 
+    android:layout_gravity="center"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
     <TextView
         android:textStyle="bold"
         android:textColor="#000000"
+        android:textSize="25sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textAlignment="center"
         android:text="Welcome to SO Diabetic"/>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-    <Button
-        android:id="@+id/newuserid"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
         android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <Button
+
+        android:id="@+id/newuserid"
+        android:focusable="false"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="New User"/>
 
     <Button
+
         android:id="@+id/returningid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -4,25 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#18FFFF"
     tools:context=".SymtomsActivity">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tctid"/>
 
 <TextView
+    android:background="#64FFDA"
     style="@style/fielTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:text=" Select Your Symptoms"/>
+    android:text=" Select Your Symptoms"
+    android:textStyle="bold"
+    android:textSize="35sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <TextView
             style="@style/fielTheme"
             android:layout_width="wrap_content"
@@ -30,8 +34,8 @@
             android:layout_height="wrap_content"
             android:text="Excessive Thirst"/>
         <CheckBox
+            android:background="#64FFDA"
             android:id="@+id/lid"
-
            android:layout_marginRight="122dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -46,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="Frequent Urination"/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/kid"
                android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -61,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:text="Weight Loss"/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/jid"
                android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -76,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="Fatigue "/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/iid"
                android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -92,6 +99,7 @@
                 android:layout_height="wrap_content"
                 android:text="Irritability"/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/hid"
                 android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -107,6 +115,7 @@
                 android:layout_height="wrap_content"
                 android:text="Blurred Vission"/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/gid"
                android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -122,6 +131,7 @@
                 android:layout_height="wrap_content"
                 android:text="Slow Healing Wound "/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/fid"
                android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -137,6 +147,7 @@
                 android:layout_height="wrap_content"
                 android:text="Nausea "/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/eid"
                 android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -152,6 +163,7 @@
                 android:layout_height="wrap_content"
                 android:text="Skin Infections"/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/did"
                android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -168,6 +180,7 @@
                 android:layout_height="wrap_content"
                 android:text="Breath Odor "/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/cid"
                android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -183,6 +196,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tingling of Hands "/>
             <CheckBox
+                android:background="#64FFDA"
                 android:id="@+id/bid"
                 android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -199,6 +213,7 @@
                 android:layout_height="wrap_content"
                 android:text="Tingling of Feet "/>
             <CheckBox
+                android:background="#64FFDA"
               android:id="@+id/aid"
                android:layout_marginRight="122dp"
                 android:layout_width="wrap_content"
@@ -206,9 +221,10 @@
         </LinearLayout>
 
 <Button
+    android:background="#00ACC1"
     android:id="@+id/nextsymid"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="Next"/>
-    </LinearLayout>
+</LinearLayout>
 </ScrollView>

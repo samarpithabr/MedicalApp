@@ -22,7 +22,7 @@ private Button returnButton;
 
                 Intent intent = new Intent(MainActivity.this,NewUserActivity.class);
                 startActivity(intent);
-                finish();
+
             }
         });
         returnButton.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +31,7 @@ private Button returnButton;
 
                 Intent intent = new Intent(MainActivity.this,ReturnActivity.class);
                 startActivity(intent);
-                finish();
+
             }
         });
     }

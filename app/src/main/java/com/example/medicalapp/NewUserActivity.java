@@ -68,8 +68,7 @@ public class NewUserActivity extends AppCompatActivity {
         civilText = (EditText) findViewById(R.id.civilid);
         mobileText = (EditText) findViewById(R.id.mobileid);
         emailText = (EditText) findViewById(R.id.emailid);
-        weightText = (EditText) findViewById(R.id.weightid);
-        sugarText = (EditText) findViewById(R.id.sugarlevelid);
+
         calendarButton = (Button) findViewById(R.id.calButton);
         calenderedit = (EditText) findViewById(R.id.editcal);
         final Calendar myCalendar = Calendar.getInstance();
@@ -116,8 +115,7 @@ nxtBtn = (Button) findViewById(R.id.nextofNewid) ;
                 String civil = civilText.getText().toString().trim();
                 String mobile = mobileText.getText().toString().trim();
                 String email = emailText.getText().toString().trim();
-                String weight = weightText.getText().toString().trim();
-                String sugar = sugarText.getText().toString().trim();
+
 
                 if (TextUtils.isEmpty(name)) {
                     Toast.makeText(getApplicationContext(), "Enter name!", Toast.LENGTH_SHORT).show();
@@ -147,16 +145,6 @@ nxtBtn = (Button) findViewById(R.id.nextofNewid) ;
                     return;
                 }
 
-                if (TextUtils.isEmpty(sugar)) {
-                    Toast.makeText(getApplicationContext(), "Enter Sugar Level!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-
-                if (TextUtils.isEmpty(weight)) {
-                    Toast.makeText(getApplicationContext(), "Enter Weight!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
 
                 if (TextUtils.isEmpty(password)) {
                     Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
@@ -182,8 +170,10 @@ nxtBtn = (Button) findViewById(R.id.nextofNewid) ;
 
                                 } else {
 
-                                    startActivity(new Intent(NewUserActivity.this, AddSugar.class));
-finish();
+                                    Intent intent = new Intent(NewUserActivity.this,AddSugar.class);
+                                    intent.putExtra("tct",usernameText.getText().toString());
+                                    startActivity(intent);
+                                  
                                 }
                             }
                         });
@@ -206,51 +196,8 @@ finish();
                 }
             }
 
-       /*    private DatePickerDialog.OnDateSetListener datePickerListener
-                    = new DatePickerDialog.OnDateSetListener() {
-
-                // when dialog box is closed, below method will be called.
-                public void onDateSet(DatePicker view, int selectedYear,
-                                      int selectedMonth, int selectedDay) {
-                    year = selectedYear;
-                    month = selectedMonth;
-                    day = selectedDay;
-
-                    // set selected date into textview
-               //   tvDisplayDate.setText(new StringBuilder().append(month + 1)
-                 //       .append("-").append(day).append("-").append(year)
-                  //       .append(" "));
-
-                    // set selected date into datepicker also
-                    dpResult.init(year, month, day, null);
-
-                }
-            };*/
-
-
-        });
-
-
+                    });
 
     }
 }
-/*    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            style="@style/fielTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Date Of Birth:"/>
-
-        <EditText
-
-            android:hint="dob"
-            android:id="@+id/dobid"
-            android:background="@drawable/textinputborder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           />
-    </LinearLayout>*/
 

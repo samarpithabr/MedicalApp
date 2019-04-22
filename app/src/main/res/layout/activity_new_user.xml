@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#18FFFF"
     tools:context=".NewUserActivity">
+
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
     <LinearLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
@@ -73,6 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             <Button
+            android:background="#00ACC1"
                 android:clickable="true"
                 android:id="@+id/calButton"
                 style="@style/fielTheme"
@@ -174,9 +178,11 @@
     </LinearLayout>
 
         <Button
+            android:background="#00ACC1"
             android:id="@+id/nextofNewid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Next"/>
+            android:layout_gravity="bottom"
+            android:text="Next" />
     </LinearLayout>
 </ScrollView>
